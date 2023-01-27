@@ -17,7 +17,7 @@ export default function Task(props) {
         SetisEdit(false);
     };
     return ( <div> { !isEdit ? 
-        <div>
+        <div style={ task.isDone ? {backgroundColor: 'grey'} : {backgroundColor: 'white'}}>
             <input type="checkbox" checked={task.isDone} onChange={() => dispatch(editTask(task.id, { isDone: !task.isDone }))} />
             <span>{task.description}</span>
             <button onClick={handleDelete}>Delete</button>
